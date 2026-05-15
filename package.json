@@ -1,0 +1,33 @@
+{
+  "name": "cryolite",
+  "version": "0.1.0",
+  "description": "Isomorphic .cryo project-manifest parser. Browser-native DOMParser, no runtime deps.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "clean": "rimraf dist"
+  },
+  "keywords": [
+    "cryo",
+    "manifest",
+    "parser",
+    "browser",
+    "isomorphic"
+  ],
+  "author": "chevp",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.3.2",
+    "rimraf": "^5.0.5"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chevp/cryolite.git"
+  },
+  "sideEffects": false
+}
