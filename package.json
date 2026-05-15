@@ -1,29 +1,74 @@
 {
   "name": "cryolite",
-  "version": "0.1.0",
-  "description": "Isomorphic .cryo project-manifest parser. Browser-native DOMParser, no runtime deps.",
+  "version": "0.2.0",
+  "description": "Cryolite — the producer + consumer that wraps nuna-middleware. .cryo + synth-xml + Lua tick scripts over a wasm engine, plus a three.js renderer for the web.",
+  "type": "module",
   "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./cryo": {
+      "types": "./dist/cryo.d.ts",
+      "import": "./dist/cryo.js"
+    },
+    "./synth-xml": {
+      "types": "./dist/synth-xml.d.ts",
+      "import": "./dist/synth-xml.js"
+    },
+    "./engine": {
+      "types": "./dist/engine.d.ts",
+      "import": "./dist/engine.js"
+    },
+    "./renderer": {
+      "types": "./dist/renderer.d.ts",
+      "import": "./dist/renderer.js"
+    },
+    "./cryolite": {
+      "types": "./dist/cryolite.d.ts",
+      "import": "./dist/cryolite.js"
+    }
+  },
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc -w",
+    "build:wasm": "./wasm-src/build.sh",
     "clean": "rimraf dist"
   },
   "keywords": [
     "cryo",
+    "cryolite",
     "manifest",
     "parser",
-    "browser",
-    "isomorphic"
+    "frost-engine",
+    "nuna-middleware",
+    "three.js",
+    "wasm",
+    "lua"
   ],
   "author": "chevp",
   "license": "Apache-2.0",
+  "peerDependencies": {
+    "three": "^0.165.0"
+  },
+  "peerDependenciesMeta": {
+    "three": {
+      "optional": true
+    }
+  },
   "devDependencies": {
-    "typescript": "^5.3.2",
-    "rimraf": "^5.0.5"
+    "@types/three": "^0.165.0",
+    "rimraf": "^5.0.5",
+    "three": "^0.165.0",
+    "typescript": "^5.3.2"
   },
   "files": [
-    "dist"
+    "dist",
+    "wasm-src",
+    "README.md"
   ],
   "repository": {
     "type": "git",
