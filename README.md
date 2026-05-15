@@ -49,4 +49,4 @@ For Node, assign a DOMParser polyfill to `globalThis.DOMParser` first.
 
 ## License
 
-MIT
+Apache-2.0
